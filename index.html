@@ -1,1 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ram Gurung | Data Analyst Portfolio</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0b0c10;
+            color: #c5c6c7;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #1f2833;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        a {
+            color: #66fcf1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #45a29e;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #66fcf1;
+            padding-left: 1rem;
+        }
+
+        /* ----- HEADER ----- */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #45a29e;
+        }
+
+        .header-left h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .header-left h1 span {
+            color: #66fcf1;
+        }
+        .header-left .title {
+            font-size: 1.2rem;
+            color: #c5c6c7;
+            margin-top: 0.2rem;
+        }
+
+        .header-right .btn {
+            display: inline-block;
+            background: #66fcf1;
+            color: #0b0c10;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .header-right .btn:hover {
+            background: #45a29e;
+            color: #ffffff;
+        }
+
+        /* ----- SOCIAL LINKS ----- */
+        .social-links {
+            margin: 1rem 0 2rem 0;
+        }
+        .social-links a {
+            font-size: 1.6rem;
+            margin-right: 1.2rem;
+            color: #c5c6c7;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #66fcf1;
+        }
+
+        /* ----- WHAT I DO ----- */
+        .what-i-do {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            background: #0b0c10;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .what-i-do .text {
+            flex: 2;
+            min-width: 250px;
+        }
+        .what-i-do .text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .what-i-do .tech-icons {
+            flex: 1;
+            min-width: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            font-size: 2.5rem;
+            color: #66fcf1;
+        }
+        .what-i-do .tech-icons i {
+            background: #1f2833;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .what-i-do .tech-icons i:hover {
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+
+        /* ----- PROFICIENCY ----- */
+        .proficiency {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0 3rem 0;
+        }
+        .proficiency .skill-category {
+            flex: 1;
+            min-width: 150px;
+        }
+        .proficiency .skill-category h3 {
+            margin-bottom: 0.8rem;
+            color: #66fcf1;
+        }
+        .skill-bar {
+            margin-bottom: 0.8rem;
+        }
+        .skill-bar .skill-name {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+        }
+        .skill-bar .bar {
+            background: #0b0c10;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .skill-bar .bar .fill {
+            height: 100%;
+            background: #66fcf1;
+            border-radius: 10px;
+            width: 0%;
+        }
+
+        /* ----- EDUCATION / EXPERIENCE / PROJECTS ----- */
+        .card {
+            background: #0b0c10;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #66fcf1;
+        }
+        .card h3 {
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+        }
+        .card .meta {
+            font-size: 0.9rem;
+            color: #66fcf1;
+            margin-bottom: 0.5rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            padding: 0.2rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "\f0da";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #66fcf1;
+        }
+
+        /* ----- PROJECTS INLINE ----- */
+        .project-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            background: #0b0c10;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid #66fcf1;
+        }
+        .project-item .project-title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .project-item .project-tech {
+            font-size: 0.85rem;
+            color: #66fcf1;
+        }
+
+        /* ----- CONTACT ----- */
+        .contact-box {
+            background: #0b0c10;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .contact-box p {
+            font-size: 1.1rem;
+        }
+        .contact-box .email-link {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #66fcf1;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #45a29e;
+            font-size: 0.9rem;
+            color: #c5c6c7;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .header {
+                flex-direction: column;
+                align-items: start;
+                gap: 1rem;
+            }
+            .header-left h1 {
+                font-size: 2.2rem;
+            }
+            .what-i-do {
+                flex-direction: column;
+            }
+            .proficiency {
+                flex-direction: column;
+            }
+            .project-item {
+                flex-direction: column;
+                align-items: start;
+                gap: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Hi, I'm <span>Ram Gurung</span></h1>
+                <div class="title">Data Analyst · Scientific Computing · Applied AI</div>
+            </div>
+            <div class="header-right">
+                <a href="#contact" class="btn">Hire Me</a>
+            </div>
+        </header>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://github.com/rgurung977" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ram-k-gurung-a06254164" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <!-- ===== WHAT I DO ===== -->
+        <section>
+            <h2>What I Do</h2>
+            <div class="what-i-do">
+                <div class="text">
+                    <p><strong>DATA ANALYST & SCIENTIFIC COMPUTING SPECIALIST</strong> who loves building reproducible data pipelines and extracting insights from complex scientific data.</p>
+                    <p>From plasma physics to geochemistry and bioinformatics — I turn raw data into actionable knowledge.</p>
+                </div>
+                <div class="tech-icons">
+                    <i class="fab fa-python"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fas fa-chart-line"></i>
+                    <i class="fab fa-git-alt"></i>
+                    <i class="fas fa-flask"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROFICIENCY ===== -->
+        <section>
+            <h2>Proficiency</h2>
+            <div class="proficiency">
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <div class="skill-bar"><span class="skill-name">Python (Pandas, NumPy)</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">SQL (MySQL)</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Excel / Calc</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization</h3>
+                    <div class="skill-bar"><span class="skill-name">Matplotlib / Seaborn</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Jupyter Notebook</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Methods</h3>
+                    <div class="skill-bar"><span class="skill-name">Linux CLI / Git</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Machine Learning</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Deep Learning</span><div class="bar"><div class="fill" style="width:65%"></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section>
+            <h2>Education</h2>
+            <div class="card">
+                <h3>London South Bank University</h3>
+                <div class="meta">MSc in Applied AI (In Progress) · Graduation: Dec 2025</div>
+                <p>Relevant Modules: Data Mining, Machine Learning, Deep Learning, Python Programming, Industrial Cyber-Physical Systems.</p>
+            </div>
+            <div class="card">
+                <h3>Tribhuvan University, Nepal</h3>
+                <div class="meta">BSc in Physics · Graduation: Dec 2009</div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section>
+            <h2>Experience</h2>
+            <div class="card">
+                <h3>Chemistry Lecturer & IT Lab Manager</h3>
+                <div class="meta">Gandaki Polytechnic Institute, Pokhara, Nepal · 2021 – 2023</div>
+                <ul>
+                    <li>Installed and managed IT lab for students, staff, and management.</li>
+                    <li>Managed Science Laboratories, maintained equipment, and ensured accurate inventory.</li>
+                    <li>Tutored introductory computer applications.</li>
+                </ul>
+                <p style="margin-top:0.5rem; font-size:0.9rem; color:#c5c6c7;"><em>Previously served as a Chemistry Lecturer at Pokhara University and as a Science Teacher in schools (2010–2021).</em></p>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section>
+            <h2>Projects</h2>
+            <div class="project-item">
+                <span class="project-title">Hotel Booking Cancellation Prediction</span>
+                <span class="project-tech">Python, Pandas, Keras, Matplotlib</span>
+            </div>
+            <div class="project-item">
+                <span class="project-title">Hydrogen Gas Concentration in Plasma</span>
+                <span class="project-tech">Python, Pandas, Matplotlib, Seaborn</span>
+            </div>
+            <div class="project-item">
+                <span class="project-title">Volcanic Rock Age Prediction</span>
+                <span class="project-tech">Python, Pandas, Scikit-learn, Matplotlib</span>
+            </div>
+            <div class="project-item">
+                <span class="project-title">Phylogenetic Tree Pipeline</span>
+                <span class="project-tech">Python, Biopython, Regex, Jupyter</span>
+            </div>
+            <div class="project-item" style="border-left-color:#45a29e;">
+                <span class="project-title">More on <a href="https://github.com/rgurung977" target="_blank">GitHub →</a></span>
+            </div>
+        </section>
+
+        <!-- ===== PUBLICATIONS ===== -->
+        <section>
+            <h2>Publications</h2>
+            <div class="card" style="border-left-color:#45a29e;">
+                <p><strong>Ali Salimian et al.</strong> "Assessing data reliability for AI-driven volcanic rock dating: A comparison of electron microprobe and laser ablation mass spectroscopy." <em>Applied Computing and Geosciences</em>, Volume 27, September 2025, 100263.</p>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-box">
+                <p>Discuss a project or just want to say hi? My Inbox is open for all.</p>
+                <p style="margin-top:0.8rem;">
+                    <a href="mailto:your.email@example.com" class="email-link"><i class="fas fa-envelope"></i> ram.gurung@example.com</a>
+                </p>
+                <p style="margin-top:0.5rem; font-size:0.9rem;">
+                    <i class="fas fa-map-marker-alt"></i> Greater London, UK
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>© 2026 Ram Gurung. Built with <i class="fas fa-heart" style="color:#66fcf1;"></i> on GitHub Pages.</p>
+        </footer>
+
+    </div>
+    <!-- end container -->
+</body>
+</html>
